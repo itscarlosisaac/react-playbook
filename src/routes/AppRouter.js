@@ -9,7 +9,7 @@ import { DashboardRoutes } from './DashboardRoutes';
 import { Login } from '../pages/Login';
 
 export const AppRouter = () => {
-  const logged = true;
+  const logged = false;
   return (
     <Router>
       <div>
