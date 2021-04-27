@@ -1,0 +1,28 @@
+.app__form {
+  &--control {
+    margin: 20px 0;
+    label {
+      margin-bottom: 10px;
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #767d8e;
+    }
+    input {
+      border: 1px solid #cfd7ea;
+      padding: 15px 10px;
+      font-size: 14px;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color ease-in 0.5s;
+      &:focus {
+        border-color: #267fff;
+      }
+
+      &.not-valid {
+        border-color: red;
+      }
+    }
+  }
+}

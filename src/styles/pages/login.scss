@@ -1,0 +1,75 @@
+.app__screen {
+  &--login {
+    background-color: #f2f6ff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  .app__form {
+      &--login {
+        min-width: 320px;
+        max-width: 500px;
+        margin:  40px 20px;
+        padding: 20px 25px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow:
+        0 7.2px 10.8px -29px rgba(0, 0, 0, 0.012),
+        0 17.5px 20px -29px rgba(0, 0, 0, 0.017),
+        0 32.8px 27.6px -29px rgba(0, 0, 0, 0.021),
+        0 56.8px 34.4px -29px rgba(0, 0, 0, 0.025),
+        0 98.7px 43.8px -29px rgba(0, 0, 0, 0.031),
+        0 206px 80px -29px rgba(0, 0, 0, 0.05)
+      ;
+      &--header {
+        text-align: center;
+        margin-bottom: 50px;
+        h3 {
+          color: #32517e;
+          font-size: 1.4rem;
+          margin-bottom: 10px;
+          font-weight: 500;
+        }
+        p {
+          color: #b5bfd0;
+          line-height: 1.4em;
+        }
+      }
+      &--note {
+        font-size: 80%;
+        display: block;
+        color: #777f8e;
+      }
+      &--footer {
+        small {
+          font-weight: 500;
+          letter-spacing: 0.1pt;
+          font-size: 80%;
+          color: #777f8e;
+          a {
+            margin-left: 4px;
+            color: #267fff;
+            text-decoration: none;
+          }
+        }
+      }
+      button[type="submit"] {
+        width: 100%;
+        border-radius: 100px;
+        border: none;
+        color: white;
+        background-color: #267fff;
+        padding: 12px 10px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// #95a7c0

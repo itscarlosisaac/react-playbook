@@ -17,7 +17,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 body {
-  line-height: 1; }
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1;
+ }
 
 ol, ul {
   list-style: none; }
@@ -38,3 +40,8 @@ q {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+
+  *:focus {
+    outline: none;
+  }
