@@ -1,13 +1,13 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import { Home } from '../pages/Home';
+import { Dashboard } from '../pages/Dashboard';
 
 export const DashboardRoutes = () => {
   return (
     <>
       <div className="container mt-5">
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Dashboard} />
           <Redirect to="/" />
         </Switch>
       </div>

@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useReducer } from 'react'
 import { AuthProvider } from './context/Auth/AuthContext';
 import { AuthReducer } from './context/Auth/AuthReducer';
 import { useLocalStorage } from './hooks/useLocalStorage';

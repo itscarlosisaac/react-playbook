@@ -2,7 +2,14 @@
 @import "./common/imports.scss";
 @import "./common/settings.scss";
 @import "./common/reset.scss";
+
+// Pages
+@import "./pages/home.scss";
 @import "./pages/login.scss";
 
 // Components
 @import "./components/_forms.scss";
+@import "./components/_header.scss";
+@import "./components/_aside.scss";
+@import "./components/_mainPlayground.scss";
+@import "./components/_footer.scss";

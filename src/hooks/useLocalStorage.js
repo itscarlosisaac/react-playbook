@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export const useLocalStorage = () => {
+export const useLocalStorage = (initialState = {}) => {
 
-  const [ localData, setData ] = useState();
+  const [ localData, setData ] = useState(initialState);
 
   const getLocalData = (key) => {
-    setData(JSON.parse(localStorage.getItem(key)))
+    return JSON.parse(localStorage.getItem(key));
   }
 
   const setLocalData = (key, data) => {

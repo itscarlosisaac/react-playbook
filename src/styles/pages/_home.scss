@@ -1,0 +1,16 @@
+.app__screen {
+  &--dashboard {
+    background-color: #f2f6ff;
+    display: grid;
+    display: inline-grid;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 80px auto 80px;
+    grid-template-areas: 
+      "header header header header"
+      "sidebar main main main"
+      "footer footer footer footer";
+  }
+}

@@ -1,14 +1,17 @@
 import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import { AppLogo } from '../components/common/AppLogo'
+import { PageContainer } from '../components/PageContainer';
 import { AuthContext } from '../context/Auth/AuthContext';
 import { useAsyncState } from '../hooks/useAsyncState';
 import { useForm } from '../hooks/useForm';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import { types } from '../types/types';
 
 export const Login = () => {
   const { dispatch } = useContext(AuthContext)
   const [ state, setState, getAsyncState ] = useAsyncState({ userError:null, passError:null })
+  const [, , setLocalData] = useLocalStorage();
   const history = useHistory();
 
   const [values, handleInputChange  ] = useForm({
@@ -33,12 +36,11 @@ export const Login = () => {
     e.preventDefault();
     validateForm().then(({userError, passError}) =>{
       if( !userError && !passError ) {
+        setLocalData("ReactPlaybookLogin", {username, logged: true})
         dispatch({
           type: types.login,
-          payload: {
-            username
-          }
-        })
+          payload: { username }
+        });
         history.replace("/")
       }
     })
@@ -46,7 +48,7 @@ export const Login = () => {
   }
   
   return (
-    <div className="app__screen app__screen--login">
+    <PageContainer className="app__screen app__screen--login">
       <AppLogo />
       <form className="app__form app__form--login" onSubmit={handleFormSubmit}>
         <header className="app__form--login--header">
@@ -92,10 +94,10 @@ export const Login = () => {
 
       <div className="app__form--login--footer">
         <small>
-          Forgot your password? <a href="#" className="">Reset Password</a>
+          Forgot your password? <span>Reset password</span>
         </small>
       </div>
       
-    </div>
+    </PageContainer>
   )
 }

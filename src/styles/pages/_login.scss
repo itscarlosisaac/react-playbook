@@ -49,10 +49,11 @@
           letter-spacing: 0.1pt;
           font-size: 80%;
           color: #777f8e;
-          a {
+          span {
             margin-left: 4px;
             color: #267fff;
             text-decoration: none;
+            cursor: pointer;
           }
         }
       }

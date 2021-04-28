@@ -1,0 +1,11 @@
+.app__footer {
+  grid-area: footer;
+  border-top: 1px solid #cfd7ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--copyright {
+    color: #b1bcc9;
+    font-size: 13px;
+  }
+}
