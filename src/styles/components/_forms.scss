@@ -15,7 +15,7 @@
       border-radius: 4px;
       width: 100%;
       box-sizing: border-box;
-      transition: border-color ease-in 0.5s;
+      transition: border-color ease-in 0.2s;
       &:focus {
         border-color: #267fff;
       }
@@ -23,6 +23,13 @@
       &.not-valid {
         border-color: red;
       }
+    }
+    .form--error--note{
+      font-size: 80%;
+      text-align: right;
+      display: block;
+      margin-top: 5px;
+      color: red;
     }
   }
 }

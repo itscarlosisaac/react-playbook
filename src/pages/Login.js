@@ -2,30 +2,47 @@ import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import { AppLogo } from '../components/common/AppLogo'
 import { AuthContext } from '../context/Auth/AuthContext';
+import { useAsyncState } from '../hooks/useAsyncState';
 import { useForm } from '../hooks/useForm';
 import { types } from '../types/types';
 
-
-
 export const Login = () => {
   const { dispatch } = useContext(AuthContext)
+  const [ state, setState, getAsyncState ] = useAsyncState({ userError:null, passError:null })
   const history = useHistory();
 
   const [values, handleInputChange  ] = useForm({
     username: "",
     password: "",
   });
-
   const { username, password } = values;
+  const { userError, passError } = state;
+
+  const validateForm = () => {
+    !username ? 
+      setState((prevState) => ({...prevState, userError:"Username can't be empty"})) : 
+      setState((prevState) => ({...prevState, userError:null}));
+
+    !password ? 
+      setState((prevState) => ({...prevState, passError:"Password can't be empty"})) : 
+      setState((prevState) => ({...prevState, passError: null }));
+    return getAsyncState()
+  }
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    dispatch({
-      type: types.login,
-      payload: {
-        username
+    validateForm().then(({userError, passError}) =>{
+      if( !userError && !passError ) {
+        dispatch({
+          type: types.login,
+          payload: {
+            username
+          }
+        })
+        history.replace("/")
       }
     })
-    history.replace("/")
+
   }
   
   return (
@@ -40,6 +57,7 @@ export const Login = () => {
         <div className="app__form--control">
           <label htmlFor="username">Username</label>
           <input
+            className={userError ? 'not-valid' : ''}
             onChange={handleInputChange}
             autoComplete="off"
             name="username"
@@ -47,11 +65,13 @@ export const Login = () => {
             value={username}
             placeholder="Username"
           />
+          {userError && <span className="form--error--note">Username can't be empty</span>}
         </div>
 
         <div className="app__form--control">
           <label htmlFor="password">Password</label>
           <input
+            className={passError ? 'not-valid' : ''}
             onChange={handleInputChange}
             autoComplete="off"
             name="password"
@@ -59,6 +79,7 @@ export const Login = () => {
             value={password}
             placeholder="Password"
           />
+          {passError && <span className="form--error--note">Password can't be empty</span>}
         </div>
 
         <div className="app__form--control">
