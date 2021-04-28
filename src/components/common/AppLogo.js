@@ -6,8 +6,8 @@ export const AppLogo = () => {
       <svg width="42px" height="50px" viewBox="0 0 42 50" version="1.1" xmlns="http://www.w3.org/2000/svg" >
           <defs>
               <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-                  <stop stop-color="#59B4FF" offset="0%"></stop>
-                  <stop stop-color="#2D7DFF" offset="100%"></stop>
+                  <stop stopColor="#59B4FF" offset="0%"></stop>
+                  <stop stopColor="#2D7DFF" offset="100%"></stop>
               </linearGradient>
               <filter x="-23.5%" y="-23.5%" width="147.1%" height="147.1%" filterUnits="objectBoundingBox" id="filter-2">
                   <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
