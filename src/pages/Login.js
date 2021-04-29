@@ -9,7 +9,7 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import { types } from '../types/types';
 
 export const Login = () => {
-  const { dispatch } = useContext(AuthContext)
+  const { dispatchAuthReducer } = useContext(AuthContext)
   const [ state, setState, getAsyncState ] = useAsyncState({ userError:null, passError:null })
   const [, , setLocalData] = useLocalStorage();
   const history = useHistory();
@@ -37,14 +37,13 @@ export const Login = () => {
     validateForm().then(({userError, passError}) =>{
       if( !userError && !passError ) {
         setLocalData("ReactPlaybookLogin", {username, logged: true})
-        dispatch({
+        dispatchAuthReducer({
           type: types.login,
           payload: { username }
         });
         history.replace("/")
       }
     })
-
   }
   
   return (

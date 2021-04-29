@@ -6,6 +6,7 @@ import { Navegation } from '../components/Navegation'
 import { PageContainer } from '../components/PageContainer'
 import { useHistory } from 'react-router-dom'
 import { useLocalStorage } from '../hooks/useLocalStorage'
+import { Canvas } from '../components/Canvas'
 
 
 
@@ -30,7 +31,7 @@ export const Dashboard = () => {
         </div>
       </aside>
       <main className="app__main__playground__area">  
-        <h1>Content Content</h1>
+        <Canvas />
       </main>
       <Footer/>
     </PageContainer>

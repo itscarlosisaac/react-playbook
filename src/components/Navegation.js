@@ -1,7 +1,5 @@
 import React  from 'react'
-
-
-
+import { NavLink } from 'react-router-dom'
 
 export const Navegation = () => {
 
@@ -9,13 +7,8 @@ export const Navegation = () => {
     <div>
       <nav>
         <ul>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
+          <li><NavLink to="/card" exact activeClassName="active" >Card</NavLink></li>
+          <li><NavLink to="/box" exact activeClassName="active" >Box</NavLink></li>
         </ul>
       </nav>
     </div>

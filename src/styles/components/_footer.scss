@@ -1,9 +1,10 @@
 .app__footer {
   grid-area: footer;
-  border-top: 1px solid #cfd7ea;
+  border-top: 1px solid #eceef1;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--background-light);
   &--copyright {
     color: #b1bcc9;
     font-size: 13px;

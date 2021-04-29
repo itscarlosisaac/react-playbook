@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { Dashboard } from '../pages/Dashboard';
 
 export const DashboardRoutes = () => {
@@ -7,8 +7,7 @@ export const DashboardRoutes = () => {
     <>
       <div className="container mt-5">
         <Switch>
-          <Route exact path="/" component={Dashboard} />
-          <Redirect to="/" />
+          <Route path="/" component={Dashboard} />
         </Switch>
       </div>
     </>

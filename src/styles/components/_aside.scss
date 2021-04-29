@@ -1,12 +1,13 @@
 .app__sidebar {
   grid-area: sidebar;
-  border-right: 1px solid #cfd7ea;
+  border-right: 1px solid #eceef1;
   padding: 20px 30px 10px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-color: var(--background-light);
   .logout {
-    color: #a0adc4;
+    color: var(--text-light);
     cursor: pointer;
     display: flex;
     align-items: center;
