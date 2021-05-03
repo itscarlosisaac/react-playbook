@@ -1,0 +1,62 @@
+.app__side__nav {
+  ul {
+    padding: 0;
+    margin: 0;
+
+    a {
+      line-height: 2em;
+      font-weight: 600;
+      transition: 0.4s ease all;
+      display: block;
+      position: relative;
+      padding: 5px 0;
+      color: var(--text-dark);
+      text-decoration: none;
+
+      &::before {
+        transition: 0.4s ease all;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 0%;
+        background-color: rgba(187, 191, 204, 0.2);
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: -30px
+      }
+      &::after {
+        transition: 0.4s ease all;
+        content: "";
+        display: block;
+        transform: scale(0,0);
+        height: 100%;
+        width: 3px;
+        background-color: rgba(0, 60, 255, 0.452);
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: -30px
+      }
+
+      &.active {
+        &::before {
+          width: calc(100% + 60px);
+        }
+        &::after {
+          transform: scale(1,1)
+        }
+      }
+
+      
+      &:hover {
+        &::before {
+          width: calc(100% + 60px);
+        }
+        color: var(--primary-blue);
+      }
+    }
+  }
+}
