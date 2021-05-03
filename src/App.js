@@ -8,9 +8,11 @@ import { AppRouter } from './routes/AppRouter'
 
 function App() {
   const [, getLocalData ] = useLocalStorage()
-  const [ user, dispatchAuthReducer ] = useReducer(AuthReducer, {}, () => getLocalData("ReactPlaybookLogin") || { logged: false })
+  const [ user, dispatchAuthReducer ] = useReducer(
+    AuthReducer, {}, 
+    () => getLocalData("ReactPlaybookLogin") || { logged: false })
 
-  const [ view, dispatchViewReducer ] = useReducer(ViewReducer, {view: "component"})
+  const [ view, dispatchViewReducer ] = useReducer(ViewReducer, {view: "component"} )
 
   return (
       <ViewContextProvider value={{view, dispatchViewReducer}}>
