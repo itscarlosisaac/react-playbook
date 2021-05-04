@@ -4,7 +4,7 @@ export const PropertyCardData = {
   thumbnail: propertyThumbnail,
   price: 45145,
   address: "4324 89th St North, Atlanta, GA, 33615.",
-  timestamp: "Mon May 03 2021",
+  timestamp: "May 03 2021",
   details: {
     rooms: 3,
     bath: 2.5,
