@@ -1,0 +1,62 @@
+.app__welcome {
+  display: flex;
+  align-items: flex-start;
+  height: 80%;
+  &--logo {
+    margin-right: 20px;
+    max-width: 200px;
+    width: 100%;
+  }
+  &--message {
+    h1 {
+      font-size: 3rem;
+      color: #4d56a5;
+      text-transform: uppercase;
+      font-weight: 300;
+      white-space: nowrap;
+      letter-spacing: .7rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.334;
+      letter-spacing: 0em;
+    }
+
+    hr {
+      margin: 50px 0;
+      border: 1px solid #4d56a5;
+      border-bottom: none;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #3e4ccb;
+    }
+
+    button {
+      font-size: 16px;
+      border: 1px solid #4d56a5;
+      background-color: transparent;
+      color: #4d56a5;
+      padding: 14px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  &--list {
+    margin-top: 40px;
+    ul {
+      margin-top: 20px;
+      li {
+        list-style: circle;
+        line-height: 1.8em;
+      }
+    }
+  }
+}

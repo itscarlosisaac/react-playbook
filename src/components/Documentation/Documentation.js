@@ -1,7 +1,6 @@
 import React from 'react';
 
-export const Documentation = (props) => {
-  const { tag, title, properties, description } = props;
+export const Documentation = ({ tag, title, properties, description }) => {
 
   return (
     <section className="app__documentation">

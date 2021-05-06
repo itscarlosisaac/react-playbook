@@ -7,7 +7,7 @@ export const Navegation = () => {
     <nav className="app__side__nav">
       <ul>
         <li>
-          <NavLink to="/property-card" 
+          <NavLink to="/component/property-card" 
             exact 
             activeClassName="active" >
               <span>Property Card</span>

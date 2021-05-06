@@ -7,13 +7,18 @@ import { ViewContext } from '../context/View/ViewContext';
 
 import { PropertyCard } from './PropertyCard/PropertyCard';
 import { PropertyCardData, PropertyCardDocumentation } from '../data/staticData';
+import { Welcome } from './Welcome/Welcome';
 
 
 export const Canvas = () => {
 
   const { view } = useContext(ViewContext);
 
-  const checkViewType = (Component, props, documentationProps) => {
+  const checkViewType = (Component, props, documentationProps, hasViews = true) => {
+    if( !hasViews ) { 
+      return <Component {...props} />;
+    }
+
     switch (view.view) {
       case "component":
         return (<Component {...props} />)
@@ -29,9 +34,8 @@ export const Canvas = () => {
   return (
     <>
       <Switch>
-        <Route path="/card" render={(props) => checkViewType(Card, props) } />
-        <Route path="/box" render={(props) => checkViewType(Box, props) } />
-        <Route path="/property-card" render={() => checkViewType(PropertyCard, PropertyCardData, PropertyCardDocumentation) } />
+        <Route exact path="/" render={() => checkViewType(Welcome, {}, {}, false) } />
+        <Route path="/component/property-card" render={() => checkViewType(PropertyCard, PropertyCardData, PropertyCardDocumentation) } />
       </Switch>
     </>
   )

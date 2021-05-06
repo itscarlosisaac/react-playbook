@@ -2,6 +2,8 @@
   grid-area: main;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  padding: 80px 0;
+  box-sizing: border-box;
 }
