@@ -49,7 +49,7 @@ export const Login = () => {
   return (
     <PageContainer className="app__screen app__screen--login">
       <AppLogo />
-      <form className="app__form app__form--login" onSubmit={handleFormSubmit}>
+      <form className="app__form app__form--login animate__animated animate__fadeInDown" onSubmit={handleFormSubmit}>
         <header className="app__form--login--header">
           <h3>Welcome to Storybook</h3>
           <p>Enter your credentials to access your account. </p>
