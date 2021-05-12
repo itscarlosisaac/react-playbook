@@ -18,16 +18,13 @@ export const ToggleViewComponent = () => {
   return (
     <div className="app__header--toggle">
       <div className={active === "component" ? "active" : ""} onClick={() => handleViewChange(types.viewComponent)}>
-        <FontAwesomeIcon icon={faPager} size="2x" color={iconColor} />
-        <span>Component</span>
+        <FontAwesomeIcon icon={faPager} size="1x" color={iconColor} />
       </div>
       <div className={active === "documentation" ? "active" : ""} onClick={() => handleViewChange(types.viewDocumentation)}>
-        <FontAwesomeIcon icon={faFileCode} size="2x" color={iconColor} />
-        <span>Documentation</span>
+        <FontAwesomeIcon icon={faFileCode} size="1x" color={iconColor} />
       </div>
       <div className={active === "split" ? "active" : ""} onClick={() => handleViewChange(types.viewSplit)}>
-        <FontAwesomeIcon icon={faObjectGroup} size="2x" color={iconColor} />
-        <span>Split</span>
+        <FontAwesomeIcon icon={faObjectGroup} size="1x" color={iconColor} />
       </div>
     </div>
   )

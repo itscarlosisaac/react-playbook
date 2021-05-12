@@ -1,7 +1,5 @@
 import React, { useContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { Card } from '../components/Card/Card'
-import { Box } from '../components/Card/Box'
 import { Documentation } from './Documentation/Documentation';
 import { ViewContext } from '../context/View/ViewContext';
 

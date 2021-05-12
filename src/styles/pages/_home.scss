@@ -1,24 +1,4 @@
 
-@media all and (min-width: 860px) {
-  .app__screen {
-    &--dashboard {
-      background-color: #f2f6ff;
-      display: grid;
-      display: inline-grid;
-      min-width: 100vw;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 280px auto auto auto;
-      grid-template-rows: 80px auto 60px;
-      grid-template-areas: 
-        "header header header header"
-        "sidebar main main main"
-        "footer footer footer footer";
-    }
-  }
-}
-
-
 .app__screen {
   &--dashboard {
     background-color: #f2f6ff;
@@ -30,8 +10,8 @@
     grid-template-columns: 280px auto auto auto;
     grid-template-rows: 80px auto 60px;
     grid-template-areas: 
-      "header header header header"
-      "sidebar sidebar main main"
-      "footer footer footer footer";
+      "sidebar header header header"
+      "sidebar main main main"
+      "sidebar footer footer footer";
   }
 }

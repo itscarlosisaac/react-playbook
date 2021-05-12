@@ -5,12 +5,13 @@
 
     a {
       line-height: 2em;
-      font-weight: 600;
+      font-size: 80%;
+      font-weight: 400;
       transition: 0.4s ease all;
       display: block;
       position: relative;
       padding: 5px 0;
-      color: var(--text-dark);
+      color: var(--text-color-dark);
       text-decoration: none;
 
       &::before {

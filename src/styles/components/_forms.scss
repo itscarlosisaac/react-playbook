@@ -6,10 +6,11 @@
       display: block;
       font-size: 12px;
       font-weight: 500;
-      color: #767d8e;
+      color: var(--text-color-dark);
+      letter-spacing: 0.2pt;
     }
     input {
-      border: 1px solid #cfd7ea;
+      border: 1px solid var(--color-s-light-gray);
       padding: 15px 10px;
       font-size: 14px;
       border-radius: 4px;
@@ -17,11 +18,11 @@
       box-sizing: border-box;
       transition: border-color ease-in 0.2s;
       &:focus {
-        border-color: #267fff;
+        border-color: var(--color-s-blue);
       }
 
       &.not-valid {
-        border-color: red;
+        border-color: var(--color-s-red);
       }
     }
     .form--error--note{
@@ -29,7 +30,7 @@
       text-align: right;
       display: block;
       margin-top: 5px;
-      color: red;
+      color: var(--color-s-red);;
     }
   }
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const AppLogo = () => {
+export const AppLogo = (props) => {
+    console.log(props)
   return (
     <>
-    <svg width="236px" height="58px" viewBox="0 0 236 58" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+    <svg {...props} viewBox="0 0 236 58" version="1.1" xmlns="http://www.w3.org/2000/svg" >
         <defs>
             <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
                 <stop stopColor="#1EF1B0" offset="0%"></stop>
