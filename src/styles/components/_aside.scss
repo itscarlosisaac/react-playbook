@@ -1,32 +1,61 @@
 .app__sidebar {
+  position: absolute;
+  z-index: 100;
+  min-height: 100vh;
+  max-width: 375px;
   grid-area: sidebar;
   border-right: 1px solid #eceef1;
   padding: 20px 30px 10px;
-  background-color: var(--background-light);
-  width: 100%;
+  background-color: #fff;
   box-sizing: border-box;
   background: #fff;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 80px auto 60px;
+  transition: all ease-out 0.5s;
+  left:0;
   grid-template-areas: 
     "logo"
     "navegation"
     "logout";
+
+  &--mobile {
+    left: -100%;
+    &--open {
+      left: 0;
+    }
+  }
+
   .logout {
-    color: var(--text-light);
+    color: var(--text-color-light);
     cursor: pointer;
     display: flex;
     align-items: center;
     font-weight: 500;
+    background: #F6F9FC;
+    justify-content: center;
+    display: flex;
     span {
       margin-right: 10px;
       display: block;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 500;
     }
     svg {
       width: 20px
     }
+  }
+}
+
+@media #{$medium} {
+  .app__sidebar {
+    position: initial;
+    width: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: 80px auto 60px;
+    grid-template-areas: 
+      "logo"
+      "navegation"
+      "logout";
   }
 }

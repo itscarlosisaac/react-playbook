@@ -1,13 +1,14 @@
 .app__header {
   grid-area: header;
-  border-bottom: 1px solid #eceef1;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows: auto;
-  grid-template-areas: "viewToggles" "userinfo";
+  grid-template-areas: "mobileMenu viewToggles userinfo";
   padding: 0 30px;
   background-color: var(--background-light);
   align-content: center;
+  background: #FFFFFF;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.02);
   &__user--info {
     grid-area: userinfo;
     display: flex;
@@ -54,4 +55,12 @@
       }
     }
   }
+}
+
+
+@media #{$medium} {
+  .app__header {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "viewToggles userinfo";
+  }  
 }
