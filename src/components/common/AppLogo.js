@@ -1,7 +1,6 @@
 import React from 'react'
 
 export const AppLogo = (props) => {
-    console.log(props)
   return (
     <>
     <svg {...props} viewBox="0 0 236 58" version="1.1" xmlns="http://www.w3.org/2000/svg" >
