@@ -13,11 +13,10 @@ export const PropertyCard = (props) => {
     address,
     timestamp,
     details,
-   } = props;
+  } = props;
 
-   const {rooms, bath, sqft, type } = details;
-   const iconColor = "#c1c9da";
-
+  const {rooms, bath, sqft, type } = details;
+  const iconColor = "#c1c9da";
 
   return (
     <div className="app__property__card">

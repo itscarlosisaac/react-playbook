@@ -1,33 +1,50 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import { MediaQueries } from '../utils/constants';
 import { useWindowSize } from './useWindowSize';
 
+const Medias = {
+  "MOBILE": "mobile",
+  "TABLET": "tablet",
+  "DESKTOP": "desktop",
+}
+
 export const useResponsive = () => {
 
-  const [responsiveState, setState] = useState({
-    isTablet: false,
-    isMobile: false,
-    isDesktop: false
-  });
+  const [responsiveState, setState] = useState(Medias.DESKTOP);
 
-  const [ windowSize ] = useWindowSize();
+  const [ { width } ] = useWindowSize();
+  let newState, prevState;
+  
+  const updateState = () => {
+    prevState = responsiveState;
+
+    width <= MediaQueries.mobile ?
+        newState = Medias.MOBILE :
+      width <= MediaQueries.tablet ?
+        newState = Medias.TABLET :
+        newState = Medias.DESKTOP
+    // switch (true) {
+    //   case width <= MediaQueries.mobile:
+    //     newState = Medias.MOBILE
+    //     break;
+
+    //   case width <= MediaQueries.tablet:
+    //     newState = Medias.TABLET
+    //     break;
+    
+    //   default:
+    //     newState = Medias.DESKTOP
+    //     break;
+    // }
+    
+    return prevState === newState ? prevState : setState(newState);
+    
+  }
 
   useEffect(() => {
-    switch (true) {
-      case windowSize.width <= MediaQueries.mobile:
-        setState({isDesktop: false, isTablet: false, isMobile: true})
-        break;
-
-      case windowSize.width <= MediaQueries.tablet:
-        setState({isDesktop: false, isTablet: true, isMobile: false })
-        break;
-    
-      default:
-        setState({isDesktop: true, isTablet: false, isMobile: false })
-        break;
-    }
+    updateState();
     return () => { }
-  }, [windowSize])
+  }, [ width ])
 
   return [ responsiveState ];
 }

@@ -1,27 +1,34 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink} from 'react-router-dom';
-import { useWindowSize } from '../../hooks/useWindowSize';
+import { useResponsive } from '../../hooks/useResponsive';
 import { Navegation } from '../Navegation';
 import { AppLogo } from './AppLogo';
 import { Logout } from './Logout';
 // import { IsMobileContext } from '../../context/IsMobile/IsMobileContext';
 
+
 export const Sidebar = () => {
   
-  const [ windowSize ] = useWindowSize();
-  const [ isMobile, setIsMobile ] = useState();
+  const [ responsiveState ] = useResponsive();
+  // const { isMobile, isTablet } = responsiveState;
+  
+  const [showSidebar, setShowSidebar ] = useState();
 
   useEffect(() => {
-    windowSize.width < 960 ? setIsMobile(true) : setIsMobile(false);
-    return () => { }
-  }, [windowSize])
+    console.log("Rendering Sidebar")
+    responsiveState === "mobile" || responsiveState === "tablet" ? 
+      setShowSidebar(true) : 
+      setShowSidebar(false)
+    return () => {}
+  }, [responsiveState])
+
   
-  const isNavOpen = false;
   return (
     <aside className={
       // isMobile && isNavOpen ? 
-      // "app__sidebar app__sidebar--mobile app__sidebar--mobile-open" :
-      isMobile ? "app__sidebar app__sidebar--mobile" : 
+      showSidebar ?
+      "app__sidebar app__sidebar--mobile app__sidebar--mobile-open" :
+      // (isMobile || isTablet) ? "app__sidebar app__sidebar--mobile" : 
       "app__sidebar" } >
       <div>
         <NavLink to="/">
