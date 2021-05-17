@@ -10,7 +10,7 @@ const Medias = {
 
 export const useResponsive = () => {
 
-  const [responsiveState, setState] = useState(Medias.DESKTOP);
+  const [responsiveState, setState] = useState(undefined);
 
   const [ { width } ] = useWindowSize();
   let newState, prevState;

@@ -15,7 +15,7 @@ export const Header = (props) => {
     <header className="app__header" {...props}>
       { location.pathname.includes("/component") && <ToggleViewComponent/> }
 
-      { (responsiveState === "mobile" || responsiveState === "tablet" ) && <div className="ne" onClick={ props.handleToggleNav}>
+      { (responsiveState === "mobile" || responsiveState === "tablet" ) && <div className="app__mobile--nav" onClick={ props.toggleNav}>
         <FontAwesomeIcon icon={faBars} color="#c1c9da" size="1x"/> 
       </div> }
       <div className="app__header__user--info">

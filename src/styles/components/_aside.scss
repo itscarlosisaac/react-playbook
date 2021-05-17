@@ -12,7 +12,6 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 80px auto 60px;
-  transition: all ease-out 0.5s;
   left:0;
   grid-template-areas: 
     "logo"
@@ -21,11 +20,12 @@
 
   &--mobile {
     left: -100%;
+    transition: all ease-out 0.5s;
   }
+
   &--open {
     left: 0 !important;
   }
-
   .logout {
     color: var(--text-color-light);
     cursor: pointer;
