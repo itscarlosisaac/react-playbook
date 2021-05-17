@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFileCode, faPager, faObjectGroup } from '@fortawesome/free-solid-svg-icons';
 import { ViewContext } from '../../context/View/ViewContext'
@@ -6,8 +6,7 @@ import { types } from '../../types/types'
 
 export const ToggleViewComponent = () => {
   const { dispatchViewReducer, view } = useContext(ViewContext)
-  const [ active ] = useState(view.view);
-  const iconColor = "#c1c9da"
+  const iconColor = "#c1c9da";
   
   const handleViewChange = (type) => {
     const cleanedUpType = type.replace("[view]", "").trim();

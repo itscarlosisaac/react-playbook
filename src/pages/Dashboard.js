@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react'
+import React, {useReducer, useState} from 'react'
 import { Footer } from '../components/common/Footer'
 import { Header } from '../components/common/Header'
 import { PageContainer } from '../components/PageContainer'
@@ -9,19 +9,23 @@ import { ViewReducer } from '../context/View/ViewReducer';
 
 export const Dashboard = () => {
 
-  console.log("RENDERING DASHBOARD")
+  const [navState, setNaveState]= useState(false)
   const [ view, dispatchViewReducer ] = useReducer(ViewReducer, { view: "component" })
+
+  const handleToggleNav = () => {
+    setNaveState(!navState);
+  }
 
   return (
     <PageContainer className="app__screen app__screen--dashboard">
-      <Header />
-      <Sidebar  />
-      <main className="app__main__playground__area">  
       <ViewContextProvider value={{view, dispatchViewReducer}}>
-        <Canvas />
+        <Header handleToggleNav={handleToggleNav} navState={navState} />
+        <Sidebar  navState={navState} />
+        <main className="app__main__playground__area">  
+          <Canvas />
+        </main>
+        <Footer/>
       </ViewContextProvider>
-      </main>
-      <Footer/>
     </PageContainer>
   )
 }

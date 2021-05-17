@@ -4,6 +4,7 @@ import { AuthReducer } from './context/Auth/AuthReducer';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { AppRouter } from './routes/AppRouter'
 
+
 function App() {
   const [, getLocalData ] = useLocalStorage()
 

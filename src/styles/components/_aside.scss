@@ -21,9 +21,9 @@
 
   &--mobile {
     left: -100%;
-    &--open {
-      left: 0;
-    }
+  }
+  &--open {
+    left: 0 !important;
   }
 
   .logout {

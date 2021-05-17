@@ -7,15 +7,13 @@ import { Logout } from './Logout';
 // import { IsMobileContext } from '../../context/IsMobile/IsMobileContext';
 
 
-export const Sidebar = () => {
+export const Sidebar = (props) => {
   
   const [ responsiveState ] = useResponsive();
-  // const { isMobile, isTablet } = responsiveState;
   
   const [showSidebar, setShowSidebar ] = useState();
 
   useEffect(() => {
-    console.log("Rendering Sidebar")
     responsiveState === "mobile" || responsiveState === "tablet" ? 
       setShowSidebar(true) : 
       setShowSidebar(false)
@@ -25,10 +23,9 @@ export const Sidebar = () => {
   
   return (
     <aside className={
-      // isMobile && isNavOpen ? 
-      showSidebar ?
-      "app__sidebar app__sidebar--mobile app__sidebar--mobile-open" :
-      // (isMobile || isTablet) ? "app__sidebar app__sidebar--mobile" : 
+      showSidebar && props.navState ? 
+      "app__sidebar app__sidebar--mobile app__sidebar--open" :
+      (showSidebar) ? "app__sidebar app__sidebar--mobile" : 
       "app__sidebar" } >
       <div>
         <NavLink to="/">

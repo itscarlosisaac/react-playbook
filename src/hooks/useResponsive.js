@@ -23,22 +23,8 @@ export const useResponsive = () => {
       width <= MediaQueries.tablet ?
         newState = Medias.TABLET :
         newState = Medias.DESKTOP
-    // switch (true) {
-    //   case width <= MediaQueries.mobile:
-    //     newState = Medias.MOBILE
-    //     break;
-
-    //   case width <= MediaQueries.tablet:
-    //     newState = Medias.TABLET
-    //     break;
-    
-    //   default:
-    //     newState = Medias.DESKTOP
-    //     break;
-    // }
-    
+   
     return prevState === newState ? prevState : setState(newState);
-    
   }
 
   useEffect(() => {

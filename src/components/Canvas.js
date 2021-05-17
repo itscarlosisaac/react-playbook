@@ -21,11 +21,11 @@ export const Canvas = () => {
       case "component":
         return (<Component {...props} />)
       case "documentation":
-        return (<Documentation {...documentationProps}/>)
+        return (<Documentation {...documentationProps} />)
       case "split":
-        return (<><Component {...props}/> <Documentation {...documentationProps}/></>)
+        return (<><Component {...props} /> <Documentation {...documentationProps} /> </>)
       default:
-        return (<Component {...props}/>)
+        return (<Component {...props} />)
     }
   }
 
